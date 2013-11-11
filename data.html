@@ -1,0 +1,53 @@
+#url data
+{$get.callBack}({"status":true,"result":{"data":[<fm:GroupInfo groupId="{$get.g1}">
+<fm:MediaList
+	fields="id,uid,message,title,thumbUrl,date,duration,hits,user_name"
+	groupId="{$get.g1}"
+	sort="upload DESC"
+	searchQuery=""
+	pageSize="1"
+	channel=""
+	collection=""
+	includeChildGroups="true"
+	moderationStatus="approved"
+    includeChildren="true">
+	<fm:Loop>{"thumbnail": "{$media_thumbUrl}",
+	"group_name": "{$group.name}",
+	"see_gallery_url": "{$group.url}",
+	"see_gallery_title": "View Gallery >>",
+	"photo_by": "{$$media_user_name}",
+	"group_desc": "<fm:Truncate string="{$group.description}" length="70" trailing="..." />"}</fm:Loop></fm:MediaList></fm:GroupInfo>,<fm:GroupInfo groupId="{$get.g2}">
+<fm:MediaList
+	fields="id,uid,message,title,thumbUrl,date,duration,hits,user_name"
+	groupId="{$get.g2}"
+	sort="upload DESC"
+	searchQuery=""
+	pageSize="1"
+	channel=""
+	collection=""
+	includeChildGroups="true"
+	moderationStatus="approved"
+    includeChildren="true">
+	<fm:Loop>{"thumbnail": "{$media_thumbUrl}",
+	"group_name": "{$group.name}",
+	"see_gallery_url": "{$group.url}",
+	"see_gallery_title": "View Gallery >>",
+	"photo_by": "{$$media_user_name}",
+	"group_desc": "<fm:Truncate string="{$group.description}" length="70" trailing="..." />"}</fm:Loop></fm:MediaList></fm:GroupInfo>,<fm:GroupInfo groupId="{$get.g3}">
+<fm:MediaList
+	fields="id,uid,message,title,thumbUrl,date,duration,hits,user_name"
+	groupId="{$get.g3}"
+	sort="upload DESC"
+	searchQuery=""
+	pageSize="1"
+	channel=""
+	collection=""
+	includeChildGroups="true"
+	moderationStatus="approved"
+    includeChildren="true">
+	<fm:Loop>{"thumbnail": "{$media_thumbUrl}",
+	"group_name": "{$group.name}",
+	"see_gallery_url": "{$group.url}",
+	"see_gallery_title": "View Gallery >>",
+	"photo_by": "{$$media_user_name}",
+	"group_desc": "<fm:Truncate string="{$group.description}" length="70" trailing="..." />"}</fm:Loop></fm:MediaList></fm:GroupInfo>]}})

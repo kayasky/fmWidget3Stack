@@ -1,0 +1,45 @@
+#url fmWidget3Stack_js
+
+	parseMedia = function(json) {
+		
+		console.log(json);
+		for(var i = 0; i <= json.result.data.length-1; i++) {
+			var fmContent = '<div class="group">'
+							+	'<img src="'+json.result.data[i].thumbnail+'/13" height="80" width="80" class="left" />' 
+							+	'<div class="info">'
+							+	'<strong>'+json.result.data[i].group_name+'</strong><br/>'
+							+	'<strong>Photo By: '+json.result.data[i].photo_by+'</strong>'
+							+	'<p>'+json.result.data[i].group_desc+'</p>'
+							+	'<p><strong><a href="'+json.result.data[i].see_gallery_url+'">'+json.result.data[i].see_gallery_title+'</a></strong></p>'
+							+	'</div>'
+							+	'</div>';
+								
+			$('#fmWidget3Stack').append(fmContent);
+			
+		}
+		
+			$('#fmWidget3Stack').append('<div style="clear:both"></div>');
+	}
+	
+	ajaxReq = function (type,dataType,url,data,callBack,caller) {
+	
+	    try {
+	
+	        $.ajax({
+	            type: type,
+	            dataType: dataType,
+	            jsonpCallback: callBack,
+	            url: url,
+	            data: data
+	        });
+	
+	    } catch (e) { console.log('e', e) };
+	};
+	
+	getMedia = function() {
+		<fm:Array key="group" delimiter="," value="{$get.groups}">
+			ajaxReq('GET', 'jsonp', 'http://customwidgets.projects.fm/data?g1={$array_group.0}&g2={$array_group.1}&g3={$array_group.2}', { callBack: 'parseMedia' }, 'parseMedia', 'getMedia');
+		</fm:Array>
+	};
+	
+	getMedia();
